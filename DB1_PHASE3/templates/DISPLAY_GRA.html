@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display details for GRA</title>
+
+    <style>
+        .div_att{
+            border: 5px outset lightblue;
+            background-color: lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='div_att'>
+        <h1>DARSHANA MADALANI 1002033083</h1>
+        <h1>RACHANA RAMIREDDY 1002028071</h1>
+        <form method="post" action="{{url_for("display")}}">
+            <div>
+                <label>Enter Student ID:</label>
+                <input type="text" name="sid"><br><br>
+                <input type="submit" name="submit"><br><br>
+        </form>
+    </div>
+    <h2>
+    {% if msg %}
+    {{ msg }}
+    {% else %}
+    {{ Error_text }}
+    {% endif %}
+    </h2>
+    <table border=1 align='center'>  
+        <h1>
+            <th>Grant Title</th>
+            <th>Type</th>
+            <th>Account No.</th>
+            {% for i in data %}
+            <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>

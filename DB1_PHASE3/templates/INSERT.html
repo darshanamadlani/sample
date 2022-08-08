@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv='refresh' content='10; url=./student'>-->
+    <title>Student View</title>
+
+    <style>
+        .div_att{
+            border: 5px outset lightblue;
+            background-color: lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='div_att'>
+        <h1>DARSHANA MADALANI 33083</h1>
+        <h1>Student View</h1>
+        <form method="post" action="{{url_for("student")}}">
+            <div>
+                <label>Enter First Name :</label>
+                <input type="text" name="Fname"><br><br>
+                <label>Enter Last Name :</label>
+                <input type="text" name="Lname"><br><br>
+                <label>Enter Course Number</label>
+                <input type="text" name="cnum"><br><br>
+                <label>Enter Section</label>
+                <input type="text" name="csec"><br><br>
+                <input type="submit" name="submit"><br><br>
+        </form>
+    </div>
+    {% if msg %}
+    {{ msg }}
+    {% endif %}
+    <div>
+        {% if e_list %}
+        <h2>You are enrolled in below courses</h2>
+        <table border=1 align='center'>  
+            <h1>
+                <th>Fname</th>
+                <th>Lname</th>
+                <th>Course</th>
+                <th>Section</th>
+                {% for i in e_list %}
+                <tr>
+                    <td> {{ i.Fname }} </td>
+                    <td>{{ i.Lname }}</td>
+                    <td>{{ i.course }}</td>
+                    <td>{{ i.section }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+
+    </div>
+
+    <table border=1 align='center'>  
+        <h1>
+            <th>Course</th>
+            <th>Section</th>
+            <th>Days</th>
+            <th>Max</th>
+            {% for i in data %}
+            <tr>
+                <td>{{ i.Course }}</td>
+                <td>{{ i.Section }}</td>
+                <td>{{ i.Days }}</td>
+                <td>{{ i.Max}}</td>
+            </tr>
+            {% endfor %}
+   <!-- <div class='div_att'>
+        <form method="post" action="{{url_for("student")}}">
+            <div>
+                <label>Enroll in to the courses: </label>
+                <br><br>
+                <label>Enter First Name :</label>
+                <input type="text" name="rfname"><br><br>
+                <label>Enter Last Name :</label>
+                <input type="text" name="rlname"><br><br>
+                <label>Enter Course Number</label>
+                <input type="text" name="cnum"><br><br>
+                <label>Enter Section</label>
+                <input type="text" name="csec"><br><br>
+                <input type="submit" name="submit"><br><br>
+        </form>
+    </div>-->
+
+   
+</body>
+</html>

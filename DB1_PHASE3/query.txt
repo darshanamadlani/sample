@@ -1,0 +1,3 @@
+SELECT grants.GrantTitle, grants.Type, grants.AccountNo
+FROM gra,grants
+WHERE gra.Funding = grants.AccountNo and StudentId = 'RK1489'
