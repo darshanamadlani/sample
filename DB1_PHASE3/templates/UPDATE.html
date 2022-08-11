@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
-    <title>Show data</title>
+
 
     <style>
-        .div_att{
+        .div_att {
             border: 6px outset lightblue;
             background-color: lightblue;
-            width : fit-content;
+            width: fit-content;
         }
     </style>
 </head>
+
 <body>
-<div>
-    <div class='div_att' align='left' style='float:left;'>
-        <h1>DARSHANA MADALANI 33083</h1>
-        <h2>
-            <a href="student"/>STUDENT VIEW<br><br>
-            <a href="admin"/>ADMIN VIEW<br><br>
-        </h2>
-    </div>
+    <div>
+        <div class='div_att'>
+            <h1>DARSHANA MADALANI 1002033083</h1>
+            <h1>RACHANA RAMIREDDY 1002028071</h1>
+            <h1>Update Payment</h1>
+            <form method="POST" action="/updatePay">
+                <div>
+                    <label>Enter Course ID :</label>
+                    <input type="text" name="id"><br><br>
+                    <label>Enter Amount :</label>
+                    <input type="text" name="amount"><br><br>
+                    <input type="submit" value="Update"><br><br>
+                </div>
+            </form>
+        </div>
 </body>
+
 </html>

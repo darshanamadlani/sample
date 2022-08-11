@@ -1,3 +1,12 @@
 SELECT grants.GrantTitle, grants.Type, grants.AccountNo
 FROM gra,grants
 WHERE gra.Funding = grants.AccountNo and StudentId = 'RK1489'
+
+
+UPDATE GTA SET MonthlyPay=3000 WHERE SectionId IN (SELECT SectionId FROM SECTION WHERE CourseId='CSE3442')
+
+INSERT INTO PHDSTUDENT(StudentId, FName, LName, StSem, StYear, Supervisor) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
+INSERT INTO SCHOLARSHIPSUPPORT(StudentId, Type, Source) VALUES ('[value-1]','[value-2]','[value-3]')
+INSERT INTO PHDCOMMITTEE(StudentId, InstructorId) VALUES ('[value-1]','[value-2]')
+
+DELETE FROM SELFSUPPORT WHERE StudentId IN (SELECT SELFSUPPORT.StudentId FROM SELFSUPPORT WHERE SELFSUPPORT.StudentId NOT IN (SELECT StudentId FROM MILESTONESPASSED))
